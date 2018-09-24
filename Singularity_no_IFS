@@ -5,10 +5,10 @@ From: centos:7
 mkdir ${SINGULARITY_ROOTFS}/opt/splib
 
 %files
-splib/*.py      /opt/splib/
-spmaster.py     /opt/
+#splib/*.py      /opt/splib/
+#spmaster.py     /opt/
 # oifs-input/     /opt/
-dales-input/    /opt/
+#dales-input/    /opt/
 
 
 
@@ -32,7 +32,7 @@ cd /opt
 # make install
 # export GRIB_API_DIR=$PWD
 cd /opt
-git clone  -b release-11.1 --single-branch --depth=1 https://github.com/amusecode/amuse.git 
+git clone  --single-branch --depth=1 https://github.com/amusecode/amuse.git 
 cd amuse
 export PYTHON=python
 export MODULEPATH=/etc/modulefiles
@@ -41,7 +41,7 @@ eval `/usr/bin/modulecmd sh load mpi/openmpi-x86_64`
 make framework
 cd src
 
-hg clone -r v1.1 https://bitbucket.org/omuse/omuse
+hg clone -r new_parameterapproach_dales  https://bitbucket.org/omuse/omuse
 cd omuse
 
 export DOWNLOAD_CODES=1
@@ -51,7 +51,7 @@ export DOWNLOAD_CODES=1
 #make
 
 #cd ../dales
-cd /dales
+cd community/dales
 make
 
 
