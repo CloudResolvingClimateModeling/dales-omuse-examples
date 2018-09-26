@@ -45,7 +45,8 @@ cd src
 hg clone -r new_parameterapproach_dales  https://bitbucket.org/omuse/omuse
 cd omuse
 
-export DOWNLOAD_CODES=1
+# use DOWNLOAD_CODES=1 for latest released version, =latest for latest development version
+export DOWNLOAD_CODES=latest
 
 
 cd community/dales
